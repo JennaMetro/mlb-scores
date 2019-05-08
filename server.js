@@ -1,19 +1,11 @@
 var express = require('express');
 var path = require('path');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 4200;
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static('./dist/mlb-scores'));
 
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
-
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(`server started port: ${port}`);
-  }
+app.listen(port, function () {
+  console.log('Server is running.. on ' + Port + ' something');
 });
